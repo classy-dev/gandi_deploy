@@ -43,6 +43,5 @@ class TransactionsResource(Resource):
         for transaction in transactions:
             data.append(convert_park_to_dict(transaction, Transactions))
             # print(transaction)
-        db.session.remove()
 
         return {'status': 'success', 'data': data}, 200

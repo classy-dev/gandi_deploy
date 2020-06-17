@@ -44,8 +44,6 @@ class LoginResource(Resource):
 
         user = db.session.query(User).filter_by(username=data['username'], password=data['password']).first()
 
-        db.session.remove()
-
         if user:
 
             checked_user = convert_park_to_dict(user, User)

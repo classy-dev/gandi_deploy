@@ -28,7 +28,7 @@ class BgcontentResource(Resource):
     @staticmethod
     def get():
 
-        bgcontents = Bgcontent.query.all()
+        bgcontents = db.session.query(Bgcontent).all()
 
         data = []
         for content in bgcontents:

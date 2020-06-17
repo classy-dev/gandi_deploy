@@ -40,5 +40,4 @@ class TicketsResource(Resource):
 
         secret_data = convert_park_to_dict(secret[0], Tickets)
 
-        db.session.remove()
         return {'status': 'success', 'data': data, 'public_key': secret_data['public_key'], 'ticket_price': secret_data['ticket_price']}, 200

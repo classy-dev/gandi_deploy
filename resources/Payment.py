@@ -98,7 +98,5 @@ class PaymentResource(Resource):
 
                 db.session.commit()
 
-            db.session.remove()
-
             return {'status': 'success', 'data': success_code[1]}, 200
 
