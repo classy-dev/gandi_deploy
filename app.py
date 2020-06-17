@@ -1,36 +1,45 @@
-from flask import Blueprint, render_template
+import pymysql
 
-from flask_restful import Api
+from flask import Flask, url_for
 
-from resources.Login import LoginResource
+app = Flask(__name__)
 
-from resources.Bgcontent import BgcontentResource
+conn = pymysql.connect(host='localhost', user='root',
+                       passwd='', db='ticket_sell', autocommit=True, unix_socket='/srv/run/mysqld/mysqld.sock')
 
-from resources.Tickets import TicketsResource
+@app.route('/')
+def index():
+    cursor = conn.cursor()
 
-from resources.Payment import PaymentResource
+    try:
+        query = "INSERT INTO tickets (ticket_number, ticket_status) VALUES ('105', 0)"
+        cursor.execute(query)
+        conn.commit()
+        cursor.close()
+    except:
+        conn.rollback()
+        cursor.close()
 
-from resources.Transactions import TransactionsResource
+    cursor = conn.cursor()
 
-from resources.TemplateRender import IndexResource
+    query1 = "SELECT * FROM tickets WHERE ticket_status=0"
 
-api_bp = Blueprint('api', __name__)
+    cursor.execute(query1)
 
-api = Api(api_bp)
+    tickets = cursor.fetchall()
 
-template_bp = Blueprint('template', __name__)
+    data = []
+    for ticket in tickets:
+        ticket_number = {
+            'ticket_number': ticket[1]
+        }
+        data.append(ticket_number)
 
-template = Api(template_bp)
+    cursor.close()
+    return {'status': 'success', 'data': data}, 200
 
-template.add_resource(IndexResource, '/')
 
-api.add_resource(LoginResource, '/login')
+if __name__ == "__main__":
 
-api.add_resource(BgcontentResource, '/get_bgcontent')
-
-api.add_resource(TicketsResource, '/get_tickets')
-
-api.add_resource(PaymentResource, '/payment')
-
-api.add_resource(TransactionsResource, '/get_transactions/<role_id>')
+    app.run(host='localhost', debug=True)
 
