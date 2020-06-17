@@ -2053,7 +2053,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, BgContentService);
 
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api/get_bgcontent';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api/get_bgcontent';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
       }
 
@@ -2138,7 +2138,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, LoginService);
 
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api/login';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api/login';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'application/json');
       }
 
@@ -2230,7 +2230,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, TicketSaleService);
 
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api';
       }
 
       _createClass(TicketSaleService, [{
@@ -2315,7 +2315,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
         _classCallCheck(this, TransactionsService);
 
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api';
       }
 
       _createClass(TransactionsService, [{

@@ -1036,7 +1036,7 @@ __webpack_require__.r(__webpack_exports__);
 class BgContentService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api/get_bgcontent';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api/get_bgcontent';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     getBackGround() {
@@ -1077,7 +1077,7 @@ __webpack_require__.r(__webpack_exports__);
 class LoginService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api/login';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api/login';
         this.headers = new _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpHeaders"]().set('Content-Type', 'application/json');
     }
     login(username, password) {
@@ -1124,7 +1124,7 @@ __webpack_require__.r(__webpack_exports__);
 class TicketSaleService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api';
     }
     getTickets() {
         return this.httpClient.get(`${this.REST_API_SERVER}/get_tickets`);
@@ -1166,7 +1166,7 @@ __webpack_require__.r(__webpack_exports__);
 class TransactionsService {
     constructor(httpClient) {
         this.httpClient = httpClient;
-        this.REST_API_SERVER = 'https://loquepasaenapodaca.com/api';
+        this.REST_API_SERVER = 'http://51822c4902fd42389016dc1c64ee2a0a.yatu.ws/api';
     }
     getTransactions() {
         let role_id = JSON.parse(localStorage.getItem('user')).role;
